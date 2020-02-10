@@ -9,6 +9,6 @@
 
 # User.create([{name: "Mark", email: "mark@email.com"}, {name: "John", email: "john@email.com"}, {name: "Norman", email: "norman@email.com"}])
 
-User.create({name: "herda", email: "herda@email.com"})
+# User.create({name: "herda", email: "herda@email.com"})
 
-
+Campaign.create({title: "gatsby campaign", startDate: 1/3/2020, endDate: 10/3/2020, user_id: 3})
