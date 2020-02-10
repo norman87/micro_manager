@@ -13,7 +13,7 @@ import {
   Create
 } from "react-admin";
 
-export const PostList = props => (
+export const CampaignList = props => (
   <List {...props}>
     <Datagrid>
       <TextField source="id" />
@@ -26,12 +26,12 @@ export const PostList = props => (
   </List>
 );
 
-const PostTitle = ({ record }) => {
-  return <span>Post {record ? `"${record.title}"` : ""}</span>;
+const CampaignTitle = ({ record }) => {
+  return <span>Campaign {record ? `"${record.title}"` : ""}</span>;
 };
 
-export const PostEdit = props => (
-  <Edit title={<PostTitle />} {...props}>
+export const CampaignEdit = props => (
+  <Edit title={<CampaignTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
       <ReferenceInput source="userId" reference="users">
@@ -43,7 +43,7 @@ export const PostEdit = props => (
   </Edit>
 );
 
-export const PostCreate = props => (
+export const CampaignCreate = props => (
   <Create {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
