@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   List,
   Datagrid,
@@ -34,7 +34,7 @@ export const CampaignEdit = props => (
   <Edit title={<CampaignTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
-      <ReferenceInput source="userId" reference="users">
+      <ReferenceInput source="user_id" reference="users">
         <SelectInput optionText="name" />
       </ReferenceInput>
       <TextInput source="title" />
@@ -45,9 +45,9 @@ export const CampaignEdit = props => (
 
 export const CampaignCreate = props => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm redirect="list">
       <TextInput disabled source="id" />
-      <ReferenceInput source="userId" reference="users">
+      <ReferenceInput source="user_id" reference="users">
         <SelectInput optionText="name" />
       </ReferenceInput>
       <TextInput source="title" />

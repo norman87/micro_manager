@@ -89,7 +89,7 @@ export default {
       filter: JSON.stringify({ id: params.ids })
     };
     return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
-      method: "PUT",
+      method: "UPDATE",
       body: JSON.stringify(params.data)
     }).then(({ json }) => ({ data: json }));
   },
@@ -99,7 +99,7 @@ export default {
       method: "POST",
       body: JSON.stringify(params.data)
     }).then(({ json }) => ({
-      data: { ...params.data, id: json.id }
+      data: json
     })),
 
   delete: (resource, params) =>
