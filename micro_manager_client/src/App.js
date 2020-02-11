@@ -25,7 +25,7 @@ import purple from "@material-ui/core/colors/purple";
 
 //fake data
 import jsonServerProvider from "ra-data-json-server";
-const dataProvider = jsonServerProvider("http://jsonplaceholder.typicode.com");
+// const dataProvider = jsonServerProvider("http://jsonplaceholder.typicode.com");
 
 const theme = createMuiTheme({
   palette: {
@@ -37,13 +37,13 @@ const theme = createMuiTheme({
 const App = () => (
   <>
     {/* <Editorjs /> */}
-    <Admin theme={theme} dashboard={Dashboard} dataProvider={dataProvider}>
+    <Admin theme={theme} dashboard={Dashboard} dataProvider={DataProvider}>
       <Resource
-        name="posts"
-        list={PostList}
+        name="campaigns"
+        list={CampaignList}
         icon={PostIcon}
-        edit={PostEdit}
-        create={PostCreate}
+        edit={CampaignEdit}
+        create={CampaignCreate}
       />
       <Resource name="users" list={UserList} icon={UserIcon} />
     </Admin>

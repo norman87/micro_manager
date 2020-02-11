@@ -11,4 +11,9 @@
 
 # User.create({name: "herda", email: "herda@email.com"})
 
-Campaign.create({title: "gatsby campaign", startDate: 1/3/2020, endDate: 10/3/2020, user_id: 3})
+Campaign.create(
+    [{title: "lucky draw campaign", startDate: 20200301, endDate: 20200310, user_id: 3},
+    {title: "infosite campaign", startDate: 20200401, endDate: 20200410, user_id: 2},
+    {title: "current campaign", startDate: 20200501, endDate: 20200510, user_id: 1},
+    {title: "laundry campaign", startDate: 20200601, endDate: 20200610, user_id: 1}]
+)

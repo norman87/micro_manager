@@ -17,7 +17,7 @@ export const CampaignList = props => (
   <List {...props}>
     <Datagrid>
       <TextField source="id" />
-      <ReferenceField source="userId" reference="users">
+      <ReferenceField source="user_id" reference="users">
         <TextField source="name" />
       </ReferenceField>
       <TextField source="title" />
