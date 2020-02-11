@@ -4,7 +4,7 @@ import "./components/Header";
 import Layout from "./components/Layout";
 import Dashboard from "./components/Dashboard";
 import DataProvider from "./components/Dataprovider";
-import Campaign from "./components/Campaign";
+
 import Editorjs from "./components/Editorjs";
 
 //For react-admin to work
