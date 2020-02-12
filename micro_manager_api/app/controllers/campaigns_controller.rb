@@ -3,7 +3,16 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.first(3)
+
+    # Campaign.scoped(:conditions=> {:})
+
+    # startRange = JSON.parse(request.params[:range])[0]
+    endRange = JSON.parse(request.params[:range])[1] + 1
+
+    p "HEREEEEEEEE"
+    p startRange
+    p endRange
 
     render json: @campaigns
   end
@@ -45,7 +54,7 @@ class CampaignsController < ApplicationController
   # DELETE MANY
   def destroy_many
     puts "LOOK HERE"
-    
+
     items = JSON.parse(request.params[:filter])["id"]
 
     for item in items
@@ -53,8 +62,6 @@ class CampaignsController < ApplicationController
     end
 
   end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

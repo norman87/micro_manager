@@ -78,6 +78,7 @@ export default {
     }));
   },
 
+  //working
   update: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "PUT",
@@ -94,6 +95,7 @@ export default {
     }).then(({ json }) => ({ data: json }));
   },
 
+  //working
   create: (resource, params) =>
     httpClient(`${apiUrl}/${resource}`, {
       method: "POST",
@@ -102,11 +104,13 @@ export default {
       data: json
     })),
 
+  //working
   delete: (resource, params) =>
     httpClient(`${apiUrl}/${resource}/${params.id}`, {
       method: "DELETE"
     }).then(({ json }) => ({ data: json })),
 
+  //working
   deleteMany: (resource, params) => {
     const query = {
       filter: JSON.stringify({ id: params.ids })
