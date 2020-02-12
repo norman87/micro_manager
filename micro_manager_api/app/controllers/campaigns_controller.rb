@@ -35,9 +35,26 @@ class CampaignsController < ApplicationController
 
   # DELETE /campaigns/1
   def destroy
+    # if request.params.filter
+    # else
+    # end
     @campaign.destroy
-    render json: @campaign
+    render json: @campaign    
   end
+  
+  # DELETE MANY
+  def destroy_many
+    puts "LOOK HERE"
+    
+    items = JSON.parse(request.params[:filter])["id"]
+
+    for item in items
+      Campaign.find(item).destroy
+    end
+
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
