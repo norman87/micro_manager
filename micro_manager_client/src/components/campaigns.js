@@ -14,7 +14,7 @@ import {
 } from "react-admin";
 
 export const CampaignList = props => (
-  <List {...props}>
+  <List {...props} title="List of Campaigns">
     <Datagrid>
       <TextField source="id" />
       <ReferenceField source="user_id" reference="users">

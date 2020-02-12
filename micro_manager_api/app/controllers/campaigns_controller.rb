@@ -36,6 +36,7 @@ class CampaignsController < ApplicationController
   # DELETE /campaigns/1
   def destroy
     @campaign.destroy
+    render json: @campaign
   end
 
   private

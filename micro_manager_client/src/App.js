@@ -34,26 +34,6 @@ const theme = createMuiTheme({
   }
 });
 
-// class App extends React.Component {
-
-//   render() {
-//     return (
-//       <>
-//         <Admin theme={theme} dashboard={Dashboard} dataProvider={DataProvider}>
-//           <Resource
-//             name="campaigns"
-//             list={CampaignList}
-//             icon={PostIcon}
-//             edit={CampaignEdit}
-//             create={CampaignCreate}
-//           />
-//           <Resource name="users" list={UserList} icon={UserIcon} />
-//         </Admin>
-//       </>
-//     );
-//   }
-// }
-
 const App = () => (
   <>
     {/* <Editorjs /> */}
