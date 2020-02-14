@@ -4,8 +4,21 @@ class UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
+    
+    totalUserCount = @users.count
+    p "REQUESTTTTT"
+    p request.params
+    p request.params[:range]
+    
+    if request.params[:range] == nil
+      render json: @users
+    else
+      startRange = JSON.parse(request.params[:range])[0].to_i
+      endRange = JSON.parse(request.params[:range])[1].to_i   
+      render json: {total: totalUserCount, data: @users[startRange..endRange]}
 
-    render json: @users
+    end
+
   end
 
   # GET /users/1
