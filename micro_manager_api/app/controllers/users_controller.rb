@@ -6,9 +6,10 @@ class UsersController < ApplicationController
     @users = User.all
     
     totalUserCount = @users.count
-    p "REQUESTTTTT"
-    p request.params
-    p request.params[:range]
+
+    # p "REQUESTTTTT"
+    # p request.params
+    # p request.params[:range]
     
     if request.params[:range] == nil
       render json: @users

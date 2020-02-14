@@ -4,21 +4,24 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   def index
     @campaigns = Campaign.all
+    totalCampaignCount = Campaign.count    
+
+    if request.params[:range] == nil
+      render json: @campaigns
+    else
+      startRange = JSON.parse(request.params[:range])[0].to_i
+      endRange = JSON.parse(request.params[:range])[1].to_i    
+      render json: {total: totalCampaignCount, data: @campaigns[startRange..endRange]}
+    end
+    # p "HEREEEEEEEE"
     
-    startRange = JSON.parse(request.params[:range])[0].to_i
-    endRange = JSON.parse(request.params[:range])[1].to_i    
-    
-    p "HEREEEEEEEE"
-    
-    puts request.params
+    # puts request.params
     # p startRange
     # p endRange
     
-    totalCampaignCount = Campaign.count
     
-    render json: {total: totalCampaignCount, data: @campaigns[startRange..endRange]}
     # render json: @campaigns[startRange..endRange]
-    puts response.body
+    # puts response.body
 
     # p "RESPONSE HEADER"
     # p response.header
