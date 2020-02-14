@@ -7,7 +7,11 @@ const httpClient = fetchUtils.fetchJson;
 export default {
   getList: (resource, params) => {
     const { page, perPage } = params.pagination;
+    console.log(params.pagination);
+
     const { field, order } = params.sort;
+    console.log(params.sort);
+
     const query = {
       sort: JSON.stringify([field, order]),
       range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
@@ -32,8 +36,8 @@ export default {
     // );
 
     return httpClient(url).then(({ headers, json }) => ({
-      data: json,
-      total: parseInt(json.length, 10)
+      data: json.data,
+      total: parseInt(json.total, 10)
     }));
   },
 
