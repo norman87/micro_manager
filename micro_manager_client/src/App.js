@@ -8,6 +8,9 @@ import DataProvider from "./components/Dataprovider";
 //Editor.js
 import Editorjs from "./components/Editorjs";
 
+//TinyMCE
+import TinyMCE from "./components/tinyMCE";
+
 //For react-admin to work
 import { Admin, Resource } from "react-admin";
 import { UserList } from "./components/users";
@@ -38,7 +41,6 @@ const theme = createMuiTheme({
 
 const App = () => (
   <>
-    <Editorjs />
     {/* <Admin
       theme={theme}
       dashboard={Dashboard}

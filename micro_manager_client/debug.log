@@ -1,3 +1,5 @@
 [0214/210358.314:ERROR:process_info.cc(359)] UncheckedAllocate
 [0214/212048.692:ERROR:process_info.cc(359)] UncheckedAllocate
 [0214/213929.534:ERROR:process_info.cc(359)] UncheckedAllocate
+[0215/121850.527:ERROR:process_info.cc(359)] UncheckedAllocate
+[0215/121850.564:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
