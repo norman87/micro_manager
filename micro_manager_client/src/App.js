@@ -16,6 +16,7 @@ import {
   CampaignEdit,
   CampaignCreate
 } from "./components/campaigns";
+import authProvider from "./components/authProvider";
 
 //Material UI design
 import PostIcon from "@material-ui/icons/Book";
@@ -37,7 +38,12 @@ const theme = createMuiTheme({
 const App = () => (
   <>
     {/* <Editorjs /> */}
-    <Admin theme={theme} dashboard={Dashboard} dataProvider={DataProvider}>
+    <Admin
+      theme={theme}
+      dashboard={Dashboard}
+      dataProvider={DataProvider}
+      authProvider={authProvider}
+    >
       <Resource
         name="campaigns"
         list={CampaignList}
