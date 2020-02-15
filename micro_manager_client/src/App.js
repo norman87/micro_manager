@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./components/Dashboard";
 import DataProvider from "./components/Dataprovider";
 
+//Editor.js
 import Editorjs from "./components/Editorjs";
 
 //For react-admin to work
@@ -37,8 +38,8 @@ const theme = createMuiTheme({
 
 const App = () => (
   <>
-    {/* <Editorjs /> */}
-    <Admin
+    <Editorjs />
+    {/* <Admin
       theme={theme}
       dashboard={Dashboard}
       dataProvider={DataProvider}
@@ -52,7 +53,7 @@ const App = () => (
         create={CampaignCreate}
       />
       <Resource name="users" list={UserList} icon={UserIcon} />
-    </Admin>
+    </Admin> */}
   </>
 );
 
