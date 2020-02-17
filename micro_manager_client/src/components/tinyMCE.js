@@ -28,7 +28,8 @@ class TinyMCE extends React.Component {
         "image",
         "quickbars",
         "codesample",
-        "help"
+        "help",
+        "save"
       ],
       toolbar: false,
       quickbars_insert_toolbar: "quicktable image media codesample",
@@ -51,14 +52,18 @@ class TinyMCE extends React.Component {
     tinyMCE.init(dfreeHeaderConfig);
     tinyMCE.init(dfreeBodyConfig);
 
-    tinyMCE.activeEditor.execCommand("mceCancel");
-    tinyMCE.activeEditor.execCommand("mceSave");
+    // tinyMCE.activeEditor.execCommand("mceCancel");
+    // tinyMCE.activeEditor.execCommand("mceSave");
   }
 
   render() {
     return (
       <div>
-        <h1 class="dfree-header">LUCKY DRAW CAMPAIGN</h1>
+        <form method="POST" action="">
+          <h1 id="name1" class="dfree-header">
+            LUCKY DRAW CAMPAIGN
+          </h1>
+        </form>
 
         <br />
         <div id="dfree-body" class="dfree-body ">

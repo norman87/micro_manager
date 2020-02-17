@@ -18298,3 +18298,268 @@ puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
 puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:07:25 +0800
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 79ms (Views: 4.0ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%2C1%2C5%5D%7D" for ::1 at 2020-02-15 17:07:27 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3,1,5]}"}
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 202ms (Views: 5.6ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B10%2C19%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:07:56 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[10,19]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B5%5D%7D" for ::1 at 2020-02-15 17:07:56 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:07:59 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%2C1%2C5%5D%7D" for ::1 at 2020-02-15 17:07:59 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3,1,5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:08:02 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:08:10 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B1%2C2%2C3%2C5%5D%7D" for ::1 at 2020-02-15 17:08:11 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[1,2,3,5]}"}
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:09:35 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%2C1%2C5%5D%7D" for ::1 at 2020-02-15 17:09:35 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3,1,5]}"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:09:53 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B10%2C14%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:09:55 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[10,14]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B5%5D%7D" for ::1 at 2020-02-15 17:09:55 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:09:56 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%5D%7D" for ::1 at 2020-02-15 17:09:56 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3]}"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B5%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:09:58 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[5,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B1%2C2%2C3%2C5%5D%7D" for ::1 at 2020-02-15 17:09:58 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[1,2,3,5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:11 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B5%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:13 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[5,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B1%2C2%2C3%2C5%5D%7D" for ::1 at 2020-02-15 17:10:13 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[1,2,3,5]}"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:16 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%5D%7D" for ::1 at 2020-02-15 17:10:16 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:19 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C9%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:22 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,9]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B1%2C2%2C3%2C5%5D%7D" for ::1 at 2020-02-15 17:10:22 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[1,2,3,5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C24%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:24 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,24]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B5%5D%7D" for ::1 at 2020-02-15 17:10:25 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[5]}"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:10:30 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:17:14 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%5D%7D" for ::1 at 2020-02-15 17:17:14 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3]}"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/campaigns?filter=%7B%7D&range=%5B0%2C4%5D&sort=%5B%22id%22%2C%22ASC%22%5D" for ::1 at 2020-02-15 17:17:39 +0800
+Processing by CampaignsController#index as JSON
+  Parameters: {"filter"=>"{}", "range"=>"[0,4]", "sort"=>"[\"id\",\"ASC\"]"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "campaigns"[0m
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users?filter=%7B%22id%22%3A%5B2%2C3%5D%7D" for ::1 at 2020-02-15 17:17:40 +0800
+Processing by UsersController#index as JSON
+  Parameters: {"filter"=>"{\"id\":[2,3]}"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+
+

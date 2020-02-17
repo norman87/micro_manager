@@ -10,6 +10,8 @@ import Editorjs from "./components/Editorjs";
 
 //TinyMCE
 import TinyMCE from "./components/tinyMCE";
+import TinyEditor from "./components/Editor";
+import LuckyDraw1 from "./templates/luckyDraw1";
 
 //For react-admin to work
 import { Admin, Resource } from "react-admin";
@@ -41,6 +43,8 @@ const theme = createMuiTheme({
 
 const App = () => (
   <>
+    <LuckyDraw1 />
+    {/* <TinyMCE /> */}
     {/* <Admin
       theme={theme}
       dashboard={Dashboard}
