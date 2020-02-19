@@ -12,12 +12,14 @@ class LuckyDraw1 extends React.Component {
       // quickbars_insert_toolbar: "quickimage quicktable"
       quickbars_selection_toolbar:
         "bold italic underline | quicklink h2 h3 formatselect",
-      save_onsavecallback: function(item) {
-        console.log("Saved content", item.getContent());
-        console.log("Saved element", item.getElement());
-        console.log("Saved dom", item.dom);
+      save_onsavecallback: function(editor) {
+        console.log("Saved content", editor.getContent());
+        // console.log("Saved element", item.getElement());
+        // console.log("Saved container", item.getContainer());
+        // console.log("Saved body", item.getBody());
+        // console.log("Get Doc", item.getDoc());
 
-        // fetch POST to api
+        // console.log("Saved dom", item.dom);
       }
     });
 
@@ -35,12 +37,13 @@ class LuckyDraw1 extends React.Component {
         }
       ],
       save_onsavecallback: function(editor) {
-        console.log("Saved editor", editor);
-        console.log(editor.getElement());
+        console.log("Saved content", editor.getContent());
       }
     });
 
-    const axios = require("axios").default;
+    // const axios = require("axios").default;
+
+    // axios.post("/");
   }
   render() {
     return (
