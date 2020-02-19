@@ -1,7 +1,26 @@
 import React from "react";
+import axios from "axios";
 
 class LuckyDrawPage extends React.Component {
-  componentDidMount() {}
+  constructor(props) {
+    super(props);
+    this.state = { html_body: "" };
+  }
+  componentDidMount() {
+    axios
+      .get("http://localhost:3001/campaigns/48")
+      .then(response => {
+        console.log(response);
+        console.log("html-head" + response.data.html_head);
+        this.setState({
+          html_body: response.data.html_body
+        });
+        console.log("html-body" + response.data.html_body);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
   render() {
     return (
@@ -17,6 +36,7 @@ class LuckyDrawPage extends React.Component {
         </div>
         <div className="row align-items-center border border-primary editable-text">
           {/* html-body */}
+          {this.state.html_body}
           <div className="col-6 border border-danger"></div>
         </div>
       </div>
