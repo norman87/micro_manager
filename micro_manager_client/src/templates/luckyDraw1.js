@@ -79,7 +79,6 @@ class LuckyDraw1 extends React.Component {
             style={{ width: "20vw", margin: "3%" }}
           />
         </div>
-        {/* <form method="post"> */}
         <div className="row align-items-center border border-primary editable-text">
           <div className="col-6 border border-danger">
             <div
@@ -106,7 +105,6 @@ class LuckyDraw1 extends React.Component {
           </div>
           <div className="col-6 border border-danger">2 of 2</div>
         </div>
-        {/* </form> */}
       </div>
     );
   }
