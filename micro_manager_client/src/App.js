@@ -46,8 +46,7 @@ const App = () => (
   <>
     {/* <LuckyDraw1 /> */}
     {/* <LuckyDrawPage /> */}
-    {/* <TinyMCE /> */}
-    <Admin
+    {/* <Admin
       theme={theme}
       dashboard={Dashboard}
       dataProvider={DataProvider}
@@ -61,7 +60,7 @@ const App = () => (
         create={CampaignCreate}
       />
       <Resource name="users" list={UserList} icon={UserIcon} />
-    </Admin>
+    </Admin> */}
   </>
 );
 

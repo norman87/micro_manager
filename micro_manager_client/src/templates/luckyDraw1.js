@@ -55,6 +55,9 @@ class LuckyDraw1 extends React.Component {
       ],
       save_onsavecallback: function(editor) {
         console.log("Saved content", editor.getContent());
+        console.log("Saved body", editor.getBody());
+        console.log("Saved container", editor.getContainer());
+        console.log("Saved doc", editor.getDoc());
         that.axiosUpdate(
           "http://localhost:3001/campaigns/48",
           "html_head",
@@ -79,8 +82,8 @@ class LuckyDraw1 extends React.Component {
             style={{ width: "20vw", margin: "3%" }}
           />
         </div>
-        <div className="row align-items-center border border-primary editable-text">
-          <div className="col-6 border border-danger">
+        <div className="row align-items-center editable-text">
+          <div className="col-6 ">
             <div
               style={{
                 height: "60vh",
@@ -103,7 +106,32 @@ class LuckyDraw1 extends React.Component {
               <h4>Input your PIN number on the right</h4>
             </div>
           </div>
-          <div className="col-6 border border-danger">2 of 2</div>
+          <div className="col-6">
+            <form
+              className="form-inline"
+              style={{
+                padding: "3%",
+                margin: "3%",
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                borderRadius: 25
+              }}
+            >
+              <div className="form-group mx-sm-3 mb-2">
+                <label for="inputPassword2" className="sr-only">
+                  Lucky Draw Pin
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="inputPassword2"
+                  placeholder="Lucky Draw Pin"
+                ></input>
+              </div>
+              <button type="submit" className="btn btn-primary mb-2">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     );
