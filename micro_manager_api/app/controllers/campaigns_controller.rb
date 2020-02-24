@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.order('id ASC')
     totalCampaignCount = Campaign.count    
 
     if request.params[:range] == nil
@@ -86,6 +86,6 @@ class CampaignsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def campaign_params
-      params.require(:campaign).permit(:title, :user_id, :startDate, :endDate, :html_head, :html_body, :theme)
+      params.require(:campaign).permit(:title, :user_id, :startDate, :endDate, :html_head, :html_body, :theme, :background_image)
     end
 end

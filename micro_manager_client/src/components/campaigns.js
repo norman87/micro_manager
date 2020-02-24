@@ -44,14 +44,13 @@ const CampaignTitle = ({ record }) => {
 
 export const CampaignEdit = props => {
   const [theme, setTheme] = useState("");
-
   const dataProvider = useDataProvider();
 
   useEffect(() => {
     dataProvider.getOne("campaigns", { id: props.id }).then(({ data }) => {
       setTheme(data.theme);
     });
-  });
+  }, []);
 
   return (
     <Edit title={<CampaignTitle />} {...props}>
@@ -70,36 +69,59 @@ export const CampaignEdit = props => {
             { id: "infosite1", name: "Infosite" }
           ]}
           onChange={x => setTheme(x.target.value)}
-          optionValue="id"
         />
         <button
           variant="contained"
-          onClick={() => window.open("/#/" + theme + "?id=" + props.id)}
+          onClick={event => {
+            window.open("/#/" + theme + "?id=" + props.id);
+            event.preventDefault();
+          }}
+          // onClick={event => window.open("/#/" + theme + "?id=" + props.id)}
         >
           Edit Theme
         </button>
+        <TextInput source="background_image" fullWidth="true" />
       </SimpleForm>
     </Edit>
   );
 };
 
-export const CampaignCreate = props => (
-  <Create {...props}>
-    <SimpleForm redirect="list">
-      <TextInput disabled source="id" />
-      <ReferenceInput source="user_id" reference="users">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
-      <TextInput source="title" />
-      <DateInput source="startDate" />
-      <DateInput source="endDate" />
-      <SelectInput
-        source="theme"
-        choices={[
-          { id: "lucky_draw", name: "Lucky Draw" },
-          { id: "infosite", name: "Infosite" }
-        ]}
-      />
-    </SimpleForm>
-  </Create>
-);
+export const CampaignCreate = props => {
+  const [theme, setTheme] = useState("");
+
+  return (
+    <Create {...props}>
+      <SimpleForm redirect="list">
+        <TextInput disabled source="id" />
+        <ReferenceInput source="user_id" reference="users">
+          <SelectInput optionText="name" />
+        </ReferenceInput>
+        <TextInput source="title" />
+        <DateInput source="startDate" />
+        <DateInput source="endDate" />
+        <SelectInput
+          source="theme"
+          choices={[
+            { id: "luckydrawsample", name: "Lucky Draw" },
+            { id: "infositesample", name: "Infosite" }
+          ]}
+          onChange={x => setTheme(x.target.value)}
+        />
+        <button
+          variant="contained"
+          onClick={event => {
+            window.open("/#/" + theme);
+            event.preventDefault();
+          }}
+        >
+          Theme Preview
+        </button>
+        <TextInput
+          source="background_image"
+          defaultValue="https://e4z6b5i3.stackpathcdn.com/wp-content/uploads/2015/03/Island-1.jpg"
+          fullWidth="true"
+        />
+      </SimpleForm>
+    </Create>
+  );
+};

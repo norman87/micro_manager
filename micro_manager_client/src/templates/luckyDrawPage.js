@@ -43,6 +43,9 @@ class LuckyDrawPage extends React.Component {
         className="container-fluid"
         style={{
           backgroundImage: `url(${"https://e4z6b5i3.stackpathcdn.com/wp-content/uploads/2015/03/Island-1.jpg"})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           height: "100vh"
         }}
       >

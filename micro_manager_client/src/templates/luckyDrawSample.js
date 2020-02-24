@@ -1,76 +1,7 @@
 import React from "react";
 import tinyMCE from "tinymce";
 
-class LuckyDraw1 extends React.Component {
-  axiosUpdate = (URL, updateField, content) => {
-    const axios = require("axios").default;
-
-    axios
-      .put(URL, {
-        [updateField]: content
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .then(function(error) {
-        console.log(error);
-      });
-  };
-
-  componentDidMount() {
-    let that = this;
-
-    let queryParams = window.location.hash.split("?").pop();
-    let params = new URLSearchParams(queryParams);
-    let paramsId = params.get("id");
-
-    tinyMCE.init({
-      selector: ".editable-text",
-      menubar: false,
-      inline: true,
-      toolbar: ["save"],
-      plugins: ["quickbars", "save", "autosave"],
-      // quickbars_insert_toolbar: "quickimage quicktable"
-      quickbars_selection_toolbar:
-        "bold italic underline | quicklink h2 h3 formatselect",
-      save_onsavecallback: function(editor) {
-        console.log("Saved content", editor.getContent());
-
-        that.axiosUpdate(
-          "http://localhost:3001/campaigns/48" + paramsId,
-          "html_body",
-          editor.getContent()
-        );
-      }
-    });
-
-    tinyMCE.init({
-      selector: ".editable-image", // change this value according to your HTML
-      plugins: ["image", "save", "autosave"],
-      menubar: false,
-      toolbar: ["image", "save"],
-      inline: true,
-      image_list: [
-        {
-          title: "Macs Logo",
-          value:
-            "https://d1nqx6es26drid.cloudfront.net/app/uploads/2019/11/05175538/McD_TheToken%C2%AE_1235_RGB.png"
-        }
-      ],
-      save_onsavecallback: function(editor) {
-        console.log("Saved content", editor.getContent());
-        console.log("Saved body", editor.getBody());
-        console.log("Saved container", editor.getContainer());
-        console.log("Saved doc", editor.getDoc());
-        that.axiosUpdate(
-          "http://localhost:3001/campaigns/" + paramsId,
-          "html_head",
-          editor.getContent()
-        );
-      }
-    });
-  }
-
+class LuckyDrawSample extends React.Component {
   render() {
     return (
       <div
@@ -145,4 +76,4 @@ class LuckyDraw1 extends React.Component {
   }
 }
 
-export default LuckyDraw1;
+export default LuckyDrawSample;
