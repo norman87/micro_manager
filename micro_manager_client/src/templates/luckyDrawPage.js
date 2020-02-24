@@ -14,8 +14,12 @@ class LuckyDrawPage extends React.Component {
     //   createClass: false
     // });
 
+    let queryParams = window.location.hash.split("?").pop();
+    let params = new URLSearchParams(queryParams);
+    let paramsId = params.get("id");
+
     axios
-      .get("http://localhost:3001/campaigns/48")
+      .get("http://localhost:3001/campaigns/" + paramsId)
       .then(response => {
         console.log(response);
         // console.log("html-head" + response.data.html_head);

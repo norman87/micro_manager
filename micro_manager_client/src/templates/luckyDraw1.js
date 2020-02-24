@@ -20,6 +20,10 @@ class LuckyDraw1 extends React.Component {
   componentDidMount() {
     let that = this;
 
+    let queryParams = window.location.hash.split("?").pop();
+    let params = new URLSearchParams(queryParams);
+    let paramsId = params.get("id");
+
     tinyMCE.init({
       selector: ".editable-text",
       menubar: false,
@@ -33,7 +37,7 @@ class LuckyDraw1 extends React.Component {
         console.log("Saved content", editor.getContent());
 
         that.axiosUpdate(
-          "http://localhost:3001/campaigns/48",
+          "http://localhost:3001/campaigns/48" + paramsId,
           "html_body",
           editor.getContent()
         );
@@ -59,7 +63,7 @@ class LuckyDraw1 extends React.Component {
         console.log("Saved container", editor.getContainer());
         console.log("Saved doc", editor.getDoc());
         that.axiosUpdate(
-          "http://localhost:3001/campaigns/48",
+          "http://localhost:3001/campaigns/" + paramsId,
           "html_head",
           editor.getContent()
         );
