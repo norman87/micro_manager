@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import htmltojsx from "htmltojsx";
 
 class LuckyDrawPage extends React.Component {
   constructor(props) {
