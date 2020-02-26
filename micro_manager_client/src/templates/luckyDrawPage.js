@@ -4,7 +4,7 @@ import axios from "axios";
 class LuckyDrawPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { html_body: "", html_head: "" };
+    this.state = { html_body: "", html_head: "", background_image: "" };
   }
 
   componentDidMount() {
@@ -26,10 +26,20 @@ class LuckyDrawPage extends React.Component {
         //   "html-head in JSX" + converter.convert(response.data.html_head)
         // );
         // console.log("html-body" + response.data.html_body);
-        this.setState({
-          html_body: response.data.html_body,
-          html_head: response.data.html_head
-        });
+
+        if (response.data.published == true) {
+          this.setState({
+            html_body: response.data.html_body,
+            html_head: response.data.html_head,
+            background_image: response.data.background_image
+          });
+          
+        } 
+        else {
+          this.setState({
+            background_image: "https://miro.medium.com/max/4172/1*xq5XNsYLRG5cRWgGzJiPDg.png"
+          });
+        }
       })
       .catch(function(error) {
         console.log(error);
@@ -41,7 +51,7 @@ class LuckyDrawPage extends React.Component {
       <div
         className="container-fluid"
         style={{
-          backgroundImage: `url(${"https://e4z6b5i3.stackpathcdn.com/wp-content/uploads/2015/03/Island-1.jpg"})`,
+          backgroundImage: `url(${this.state.background_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

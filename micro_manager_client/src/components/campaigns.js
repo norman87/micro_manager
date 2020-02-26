@@ -94,8 +94,7 @@ export const CampaignEdit = props => {
         <SelectInput
           source="theme"
           choices={[
-            { id: "luckydraw1", name: "Lucky Draw" },
-            { id: "infosite1", name: "Infosite" }
+            { id: "luckydraw1", name: "Lucky Draw" }
           ]}
           onChange={x => setTheme(x.target.value)}
           value={theme}
@@ -110,7 +109,8 @@ export const CampaignEdit = props => {
         >
           Edit Theme
         </button>
-        <BooleanInput source="published"/>
+        <BooleanInput label="Published?" source="published"/>
+        <a href={"/#/luckydrawpage?id=" + props.id} target="_blank">Click here to access your webpage!</a>
         <TextInput source="background_image" />
       </SimpleForm>
     </Edit>
