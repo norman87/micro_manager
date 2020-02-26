@@ -15,7 +15,8 @@ import {
   DateInput,
   useDataProvider,
   SaveButton,
-  Toolbar
+  Toolbar,
+  BooleanInput
 } from "react-admin";
 import axios from "axios";
 
@@ -109,18 +110,12 @@ export const CampaignEdit = props => {
         >
           Edit Theme
         </button>
+        <BooleanInput source="published"/>
         <TextInput source="background_image" />
       </SimpleForm>
     </Edit>
   );
 };
-
-// const CampaignCreateToolBar = props => (
-//   <Toolbar {...props} >
-//     <SaveButton handleSubmit={console.log("submitted")}/>
-//   </Toolbar>
-// )
-
 
 export const CampaignCreate = props => {
   let [theme, setTheme] = useState("");
