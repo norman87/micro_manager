@@ -101,7 +101,7 @@ class LuckyDraw1 extends React.Component {
       <div
         className="container-fluid"
         style={{
-          backgroundImage: `url(${"https://e4z6b5i3.stackpathcdn.com/wp-content/uploads/2015/03/Island-1.jpg"})`,
+          backgroundImage: `url(${this.state.background_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -111,11 +111,63 @@ class LuckyDraw1 extends React.Component {
         <div
           className="row justify-content-center editable-image"
           dangerouslySetInnerHTML={{ __html: this.state.html_head }}
-        ></div>
+        >
+        </div>
         <div
           className="row align-items-center editable-text"
           dangerouslySetInnerHTML={{ __html: this.state.html_body }}
-        ></div>
+        >
+          {/* <div className="col-6 ">
+            <div
+              style={{
+                height: "60vh",
+                padding: "3%",
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                borderRadius: 25
+              }}
+            >
+              <h1>Stand a chance to win a million dollars!</h1>
+              <br />
+              <h2>Step 1:</h2>
+              <h4>
+                Buy a meal at one of our hundred over participating outlets!
+              </h4>
+              <br />
+              <h2>Step 2:</h2>
+              <h4>Retrieve the pin from the scratch card!</h4>
+              <br />
+              <h2>Step 3:</h2>
+              <h4>Input your PIN number on the right</h4>
+            </div>
+          </div>
+          <div className="col-6">
+            <form
+              className="form-inline"
+              style={{
+                padding: "3%",
+                margin: "3%",
+                backgroundColor: "rgba(255, 255, 255, 0.5)",
+                borderRadius: 25
+              }}
+            >
+              <div className="form-group mx-sm-3 mb-2">
+                <label for="inputPassword2" className="sr-only">
+                  Lucky Draw Pin
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="inputPassword2"
+                  placeholder="Lucky Draw Pin"
+                ></input>
+              </div>
+              <button type="submit" className="btn btn-primary mb-2">
+                Submit
+              </button>
+            </form>
+          </div> */}
+        
+        </div>
       </div>
     );
   }
