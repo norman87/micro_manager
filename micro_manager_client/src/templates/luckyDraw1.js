@@ -111,8 +111,7 @@ class LuckyDraw1 extends React.Component {
         <div
           className="row justify-content-center editable-image"
           dangerouslySetInnerHTML={{ __html: this.state.html_head }}
-        >
-        </div>
+        ></div>
         <div
           className="row align-items-center editable-text"
           dangerouslySetInnerHTML={{ __html: this.state.html_body }}
@@ -166,7 +165,6 @@ class LuckyDraw1 extends React.Component {
               </button>
             </form>
           </div> */}
-        
         </div>
       </div>
     );

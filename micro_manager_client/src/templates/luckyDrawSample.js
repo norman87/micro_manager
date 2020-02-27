@@ -132,7 +132,7 @@ class LuckyDrawSample extends React.Component {
                   Lucky Draw Pin
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
                   id="luckypin"
                   placeholder="Lucky Draw Pin"
