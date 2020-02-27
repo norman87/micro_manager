@@ -84,7 +84,7 @@ export const CampaignEdit = props => {
 
   return (
     <Edit title={<CampaignTitle />} {...props}>
-      <SimpleForm redirect={false}>
+      <SimpleForm redirect={false} variant="outlined">
         <TextInput disabled source="id" />
         <ReferenceInput source="user_id" reference="users">
           <SelectInput optionText="name" />
@@ -160,7 +160,7 @@ export const CampaignCreate = props => {
 
   return (
     <Create {...props}>
-      <SimpleForm validate={validateCampaignCreation} redirect="list" >
+      <SimpleForm validate={validateCampaignCreation} redirect="list" variant="outlined">
         <TextInput disabled source="id" />
         <ReferenceInput source="user_id" reference="users">
           <SelectInput optionText="name" />
