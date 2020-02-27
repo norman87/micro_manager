@@ -1,8 +1,81 @@
 import React from "react";
 import tinyMCE from "tinymce";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
+function WinningModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">You Won!</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function LosingModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">You Lost!</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 class LuckyDrawSample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      winningModalShow: false,
+      losingModalShow: false,
+      luckyNumber: "10"
+    };
+  }
+
+  componentDidMount() {}
   render() {
+    let checkNumber = () => {
+      let luckypin = document.getElementById("luckypin").value;
+      if (luckypin == this.state.luckyNumber) {
+        this.setState({ winningModalShow: true });
+      } else {
+        this.setState({ losingModalShow: true });
+      }
+    };
+
     return (
       <div
         className="container-fluid"
@@ -55,22 +128,34 @@ class LuckyDrawSample extends React.Component {
               }}
             >
               <div className="form-group mx-sm-3 mb-2">
-                <label for="inputPassword2" className="sr-only">
+                <label for="luckypin" className="sr-only">
                   Lucky Draw Pin
                 </label>
                 <input
                   type="password"
                   className="form-control"
-                  id="inputPassword2"
+                  id="luckypin"
                   placeholder="Lucky Draw Pin"
                 ></input>
               </div>
-              <button type="submit" className="btn btn-primary mb-2">
+              <button
+                type="submit"
+                className="btn btn-primary mb-2"
+                onClick={checkNumber}
+              >
                 Submit
               </button>
             </form>
           </div>
         </div>
+        <WinningModal
+          show={this.state.winningModalShow}
+          onHide={() => this.setState({ winningModalShow: false })}
+        />
+        <LosingModal
+          show={this.state.losingModalShow}
+          onHide={() => this.setState({ losingModalShow: false })}
+        />
       </div>
     );
   }
