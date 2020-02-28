@@ -85,6 +85,10 @@ class LuckyDraw1 extends React.Component {
           title: "Starbucks",
           value:
             "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
+        },
+        {
+          title: "KFC",
+          value: "https://pngimg.com/uploads/kfc/kfc_PNG53.png"
         }
       ],
       save_onsavecallback: function(editor) {
