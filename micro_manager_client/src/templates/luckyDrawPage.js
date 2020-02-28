@@ -2,58 +2,8 @@ import React from "react";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-
-function WinningModal(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">You Won!</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
-
-function LosingModal(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">You Lost!</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+import winningSound from "../sounds/tada.flac";
+import losingSound from "../sounds/sad.mp3";
 
 class LuckyDrawPage extends React.Component {
   constructor(props) {
@@ -69,11 +19,6 @@ class LuckyDrawPage extends React.Component {
   }
 
   componentDidMount() {
-    //html to jsx converter - NOT REQUIRED TO USE
-    // let converter = new htmltojsx({
-    //   createClass: false
-    // });
-
     let queryParams = window.location.hash.split("?").pop();
     let params = new URLSearchParams(queryParams);
     let paramsId = params.get("id");
@@ -82,11 +27,6 @@ class LuckyDrawPage extends React.Component {
       .get("http://localhost:3001/campaigns/" + paramsId)
       .then(response => {
         console.log(response);
-        // console.log("html-head" + response.data.html_head);
-        // console.log(
-        //   "html-head in JSX" + converter.convert(response.data.html_head)
-        // );
-        // console.log("html-body" + response.data.html_body);
 
         if (response.data.published === true) {
           this.setState({
@@ -100,6 +40,8 @@ class LuckyDrawPage extends React.Component {
             background_image:
               "https://miro.medium.com/max/4172/1*xq5XNsYLRG5cRWgGzJiPDg.png"
           });
+          document.getElementById("luckydrawcomponent").style.visibility =
+            "hidden";
         }
       })
       .catch(function(error) {
@@ -108,13 +50,68 @@ class LuckyDrawPage extends React.Component {
   }
 
   render() {
-    let checkNumber = () => {
+    let checkNumber = event => {
+      event.preventDefault();
       let luckypin = document.getElementById("luckypin").value;
+      let winSound = new Audio(winningSound);
+      let loseSound = new Audio(losingSound);
+
       if (luckypin == this.state.lucky_string) {
         this.setState({ winningModalShow: true });
+        winSound.play();
       } else {
         this.setState({ losingModalShow: true });
+        loseSound.play();
       }
+    };
+
+    let LosingModal = props => {
+      return (
+        <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              Try Again!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{this.state.lucky_string}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={props.onHide}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      );
+    };
+
+    let WinningModal = props => {
+      return (
+        <Modal
+          {...props}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+              You Won!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              Congratulations! Head down to the nearest branch to collect your
+              price!
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={props.onHide}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      );
     };
 
     return (
@@ -138,7 +135,7 @@ class LuckyDrawPage extends React.Component {
               className="col-6 editable-text"
               dangerouslySetInnerHTML={{ __html: this.state.html_body }}
             ></div>
-            <div className="col-6">
+            <div className="col-6" id="luckydrawcomponent">
               <form
                 className="form-inline"
                 style={{

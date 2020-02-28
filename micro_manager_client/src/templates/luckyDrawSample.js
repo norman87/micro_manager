@@ -128,20 +128,10 @@ class LuckyDrawSample extends React.Component {
                   placeholder="Lucky Draw Pin"
                 ></input>
               </div>
-              <button type="submit" className="btn btn-primary mb-2">
-                Submit
-              </button>
+              <button className="btn btn-primary mb-2">Submit</button>
             </form>
           </div>
         </div>
-        <WinningModal
-          show={this.state.winningModalShow}
-          onHide={() => this.setState({ winningModalShow: false })}
-        />
-        <LosingModal
-          show={this.state.losingModalShow}
-          onHide={() => this.setState({ losingModalShow: false })}
-        />
       </div>
     );
   }

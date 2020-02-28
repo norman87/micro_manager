@@ -77,9 +77,14 @@ class LuckyDraw1 extends React.Component {
       inline: true,
       image_list: [
         {
-          title: "Macs Logo",
+          title: "MacDonald's",
           value:
             "https://d1nqx6es26drid.cloudfront.net/app/uploads/2019/11/05175538/McD_TheToken%C2%AE_1235_RGB.png"
+        },
+        {
+          title: "Starbucks",
+          value:
+            "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png"
         }
       ],
       save_onsavecallback: function(editor) {
@@ -138,24 +143,10 @@ class LuckyDraw1 extends React.Component {
                   placeholder="Lucky Draw Pin"
                 ></input>
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary mb-2"
-                // onClick={checkNumber}
-              >
-                Submit
-              </button>
+              <button className="btn btn-primary mb-2">Submit</button>
             </form>
           </div>
         </div>
-        {/* <WinningModal
-          show={this.state.winningModalShow}
-          onHide={() => this.setState({ winningModalShow: false })}
-        />
-        <LosingModal
-          show={this.state.losingModalShow}
-          onHide={() => this.setState({ losingModalShow: false })}
-        /> */}
       </div>
     );
   }

@@ -17,7 +17,8 @@ import {
   useDataProvider,
   SaveButton,
   Toolbar,
-  BooleanInput
+  BooleanInput,
+  Mutation
 } from "react-admin";
 import axios from "axios";
 
@@ -47,44 +48,28 @@ const CampaignTitle = ({ record }) => {
   return <span>Campaign {record ? `"${record.title}"` : ""}</span>;
 };
 
+const CampaignEditToolbar = props => {
+  // console.log(props.record);
+  delete props.record.html_head;
+  delete props.record.html_body;
+  console.log(props.record);
+  return (
+    <Toolbar {...props}>
+      <SaveButton />
+    </Toolbar>
+  );
+};
+
 export const CampaignEdit = props => {
   const [theme, setTheme] = useState("");
-  const dataProvider = useDataProvider();
-
-  // useEffect(() => {
-  //   dataProvider.getOne("campaigns", { id: props.id }).then(({ data }) => {
-  //     setTheme(data.theme);
-  //     console.log(data.theme);
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3001/campaigns/" + props.id)
-  //     .then(response => {
-  //       console.log("data theme" + response.data.theme);
-  //       // console.log("html-head" + response.data.html_head);
-  //       // console.log(
-  //       //   "html-head in JSX" + converter.convert(response.data.html_head)
-  //       // );
-  //       // console.log("html-body" + response.data.html_body);
-  //       if (response.data.theme == "luckydrawsample") {
-
-  //         setTheme("luckydraw1");
-  //         console.log("theme" + theme)
-  //       }
-  //       else if (response.data.theme == "infositesample") {
-  //         setTheme("infosite1")
-  //       }
-  //     })
-  //     .catch(function(error) {
-  //       console.log(error);
-  //     });
-  // }, []);
 
   return (
     <Edit title={<CampaignTitle />} {...props}>
-      <SimpleForm redirect={false} variant="outlined">
+      <SimpleForm
+        toolbar={<CampaignEditToolbar />}
+        redirect={false}
+        variant="outlined"
+      >
         <TextInput disabled source="id" />
         <ReferenceInput source="user_id" reference="users">
           <SelectInput optionText="name" />
@@ -109,10 +94,12 @@ export const CampaignEdit = props => {
         >
           Edit Theme
         </Button>
+        <br />
         <BooleanInput label="Published?" source="published" />
         <a href={"/#/luckydrawpage?id=" + props.id} target="_blank">
           Click here to access your webpage!
         </a>
+        <br />
         <TextInput source="background_image" />
       </SimpleForm>
     </Edit>
@@ -124,26 +111,6 @@ export const CampaignCreate = props => {
 
   let [html_body, setHtml_body] = useState("");
   let [html_head, setHtml_head] = useState("");
-
-  // let inputVal = useRef(null)
-
-  // useEffect(()=> {
-  //   // console.log(document.getElementById("html_head"))
-  //   // document.getElementById("html_head").value = "hello"
-  //   // console.log(inputVal)
-  //   if (theme == "luckydrawsample") {
-  //         setHtml_body("luckydrawBody")
-  //         setHtml_head("luckydrawHead")
-  //         console.log(html_body)
-  //         console.log(html_head)
-  //   }
-  //   else if ( theme == "infositesample") {
-  //         setHtml_body("infositeBody")
-  //         setHtml_head("infositeHead")
-  //         console.log(html_body)
-  //         console.log(html_head)
-  //   }
-  // })
 
   const validateCampaignCreation = values => {
     const errors = {};
@@ -197,6 +164,7 @@ export const CampaignCreate = props => {
         >
           Theme Preview
         </Button>
+        <br />
         <TextInput
           hidden
           source="html_head"
@@ -205,13 +173,7 @@ export const CampaignCreate = props => {
         <TextInput
           hidden
           source="html_body"
-          defaultValue='&lt;div style="height: 60vh; padding: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;h1&gt;Stand a chance to win a million dollars!&lt;/h1&gt;&lt;br /&gt;&lt;h2&gt;Step 1:&lt;/h2&gt;&lt;h4&gt;Buy a meal at one of our hundred over participating outlets!&lt;/h4&gt;&lt;br /&gt;
-          &lt;h2&gt;Step 2:&lt;/h2&gt;
-          &lt;h4&gt;Retrieve the pin from the scratch card!&lt;/h4&gt;
-          &lt;br /&gt;
-          &lt;h2&gt;Step 3:&lt;/h2&gt;
-          &lt;h4&gt;Input your PIN number on the right.&lt;/h4&gt;
-          &lt;/div&gt;'
+          defaultValue='&lt;div style="height: 60vh; padding: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;h1&gt;Stand a chance to win a million dollars!&lt;/h1&gt;&lt;br /&gt;&lt;h2&gt;Step 1:&lt;/h2&gt;&lt;h4&gt;Buy a meal at one of our hundred over participating outlets!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 2:&lt;/h2&gt;&lt;h4&gt;Retrieve the pin from the scratch card!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 3:&lt;/h2&gt;&lt;h4&gt;Input your PIN number on the right.&lt;/h4&gt;&lt;/div&gt;'
         />
         <TextInput
           source="background_image"

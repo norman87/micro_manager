@@ -50,8 +50,20 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+    render json: @user
   end
 
+   # DELETE MANY
+   def destroy_many
+    puts "LOOK HERE"
+
+    items = JSON.parse(request.params[:filter])["id"]
+
+    for item in items
+      User.find(item).destroy
+    end
+
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

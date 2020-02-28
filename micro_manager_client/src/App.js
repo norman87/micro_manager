@@ -6,7 +6,7 @@ import DataProvider from "./components/Dataprovider";
 
 //For react-admin to work
 import { Admin, Resource } from "react-admin";
-import { UserList } from "./components/users";
+import { UserList, UserEdit, UserCreate } from "./components/users";
 import {
   CampaignList,
   CampaignEdit,
@@ -44,7 +44,13 @@ const App = () => (
         edit={CampaignEdit}
         create={CampaignCreate}
       />
-      <Resource name="users" list={UserList} icon={UserIcon} />
+      <Resource
+        name="users"
+        list={UserList}
+        icon={UserIcon}
+        edit={UserEdit}
+        create={UserCreate}
+      />
     </Admin>
   </>
 );

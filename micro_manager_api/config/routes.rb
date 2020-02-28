@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   delete 'campaigns/', :to => 'campaigns#destroy_many'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  delete 'users/', :to => 'users#destroy_many'
 end
