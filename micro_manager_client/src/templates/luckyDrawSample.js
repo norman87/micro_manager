@@ -65,17 +65,7 @@ class LuckyDrawSample extends React.Component {
     };
   }
 
-  componentDidMount() {}
   render() {
-    let checkNumber = () => {
-      let luckypin = document.getElementById("luckypin").value;
-      if (luckypin == this.state.luckyNumber) {
-        this.setState({ winningModalShow: true });
-      } else {
-        this.setState({ losingModalShow: true });
-      }
-    };
-
     return (
       <div
         className="container-fluid"
@@ -93,8 +83,8 @@ class LuckyDrawSample extends React.Component {
             style={{ width: "20vw", margin: "3%" }}
           />
         </div>
-        <div className="row align-items-center editable-text">
-          <div className="col-6 ">
+        <div className="row align-items-center">
+          <div className="col-6 editable-text">
             <div
               style={{
                 height: "60vh",
@@ -138,11 +128,7 @@ class LuckyDrawSample extends React.Component {
                   placeholder="Lucky Draw Pin"
                 ></input>
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary mb-2"
-                onClick={checkNumber}
-              >
+              <button type="submit" className="btn btn-primary mb-2">
                 Submit
               </button>
             </form>

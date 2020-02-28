@@ -112,33 +112,11 @@ class LuckyDraw1 extends React.Component {
           className="row justify-content-center editable-image"
           dangerouslySetInnerHTML={{ __html: this.state.html_head }}
         ></div>
-        <div
-          className="row align-items-center editable-text"
-          dangerouslySetInnerHTML={{ __html: this.state.html_body }}
-        >
-          {/* <div className="col-6 ">
-            <div
-              style={{
-                height: "60vh",
-                padding: "3%",
-                backgroundColor: "rgba(255, 255, 255, 0.5)",
-                borderRadius: 25
-              }}
-            >
-              <h1>Stand a chance to win a million dollars!</h1>
-              <br />
-              <h2>Step 1:</h2>
-              <h4>
-                Buy a meal at one of our hundred over participating outlets!
-              </h4>
-              <br />
-              <h2>Step 2:</h2>
-              <h4>Retrieve the pin from the scratch card!</h4>
-              <br />
-              <h2>Step 3:</h2>
-              <h4>Input your PIN number on the right</h4>
-            </div>
-          </div>
+        <div className="row align-items-center">
+          <div
+            className="col-6 editable-text"
+            dangerouslySetInnerHTML={{ __html: this.state.html_body }}
+          ></div>
           <div className="col-6">
             <form
               className="form-inline"
@@ -150,22 +128,34 @@ class LuckyDraw1 extends React.Component {
               }}
             >
               <div className="form-group mx-sm-3 mb-2">
-                <label for="inputPassword2" className="sr-only">
+                <label for="luckypin" className="sr-only">
                   Lucky Draw Pin
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
-                  id="inputPassword2"
+                  id="luckypin"
                   placeholder="Lucky Draw Pin"
                 ></input>
               </div>
-              <button type="submit" className="btn btn-primary mb-2">
+              <button
+                type="submit"
+                className="btn btn-primary mb-2"
+                // onClick={checkNumber}
+              >
                 Submit
               </button>
             </form>
-          </div> */}
+          </div>
         </div>
+        {/* <WinningModal
+          show={this.state.winningModalShow}
+          onHide={() => this.setState({ winningModalShow: false })}
+        />
+        <LosingModal
+          show={this.state.losingModalShow}
+          onHide={() => this.setState({ losingModalShow: false })}
+        /> */}
       </div>
     );
   }

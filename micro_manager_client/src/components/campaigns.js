@@ -205,7 +205,13 @@ export const CampaignCreate = props => {
         <TextInput
           hidden
           source="html_body"
-          defaultValue='&lt;div class="col-6 "&gt;&lt;div style="height: 60vh; padding: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;h1&gt;Stand a chance to win a million dollars!&lt;/h1&gt;&lt;br /&gt;&lt;h2&gt;Step 1:&lt;/h2&gt;&lt;h4&gt;Buy a meal at one of our hundred over participating outlets!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 2:&lt;/h2&gt;&lt;h4&gt;Retrieve the pin from the scratch card!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 3:&lt;/h2&gt;&lt;h4&gt;Input your PIN number on the right.&lt;/h4&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="col-6"&gt;&lt;form class="form-inline" style="padding: 3%; margin: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;div class="form-group mx-sm-3 mb-2"&gt;&lt;label class="sr-only" for="luckypin"&gt;Lucky Draw Pin&lt;/label&gt;&lt;input class="form-control" type="text" id="luckypin" placeholder="Lucky Draw Pin" /&gt;&lt;/div&gt;&lt;button class="btn btn-primary mb-2" type="submit" onclick="checkNumber()"&gt;Submit&lt;/button&gt;&lt;/form&gt;&lt;/div&gt;'
+          defaultValue='&lt;div style="height: 60vh; padding: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;h1&gt;Stand a chance to win a million dollars!&lt;/h1&gt;&lt;br /&gt;&lt;h2&gt;Step 1:&lt;/h2&gt;&lt;h4&gt;Buy a meal at one of our hundred over participating outlets!&lt;/h4&gt;&lt;br /&gt;
+          &lt;h2&gt;Step 2:&lt;/h2&gt;
+          &lt;h4&gt;Retrieve the pin from the scratch card!&lt;/h4&gt;
+          &lt;br /&gt;
+          &lt;h2&gt;Step 3:&lt;/h2&gt;
+          &lt;h4&gt;Input your PIN number on the right.&lt;/h4&gt;
+          &lt;/div&gt;'
         />
         <TextInput
           source="background_image"

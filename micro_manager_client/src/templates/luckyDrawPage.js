@@ -116,6 +116,7 @@ class LuckyDrawPage extends React.Component {
         this.setState({ losingModalShow: true });
       }
     };
+
     return (
       <fragment>
         <div
@@ -132,10 +133,42 @@ class LuckyDrawPage extends React.Component {
             className="row justify-content-center editable-image"
             dangerouslySetInnerHTML={{ __html: this.state.html_head }}
           ></div>
-          <div
-            className="row align-items-center editable-text"
-            dangerouslySetInnerHTML={{ __html: this.state.html_body }}
-          ></div>
+          <div className="row align-items-center">
+            <div
+              className="col-6 editable-text"
+              dangerouslySetInnerHTML={{ __html: this.state.html_body }}
+            ></div>
+            <div className="col-6">
+              <form
+                className="form-inline"
+                style={{
+                  padding: "3%",
+                  margin: "3%",
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  borderRadius: 25
+                }}
+              >
+                <div className="form-group mx-sm-3 mb-2">
+                  <label for="luckypin" className="sr-only">
+                    Lucky Draw Pin
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="luckypin"
+                    placeholder="Lucky Draw Pin"
+                  ></input>
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-primary mb-2"
+                  onClick={checkNumber}
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
         <WinningModal
           show={this.state.winningModalShow}
