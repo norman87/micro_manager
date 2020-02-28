@@ -14,7 +14,9 @@ class LuckyDrawPage extends React.Component {
       background_image: "",
       winningModalShow: false,
       losingModalShow: false,
-      lucky_string: ""
+      lucky_string: "",
+      winning_message: "",
+      losing_message: ""
     };
   }
 
@@ -33,7 +35,9 @@ class LuckyDrawPage extends React.Component {
             html_body: response.data.html_body,
             html_head: response.data.html_head,
             background_image: response.data.background_image,
-            lucky_string: response.data.lucky_string
+            lucky_string: response.data.lucky_string,
+            winning_message: response.data.winning_message,
+            losing_message: response.data.losing_message
           });
         } else {
           this.setState({
@@ -79,7 +83,7 @@ class LuckyDrawPage extends React.Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>{this.state.lucky_string}</p>
+            <p>{this.state.losing_message}</p>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Close</Button>
@@ -102,10 +106,7 @@ class LuckyDrawPage extends React.Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>
-              Congratulations! Head down to the nearest branch to collect your
-              price!
-            </p>
+            <p>{this.state.winning_message}</p>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Close</Button>

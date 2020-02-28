@@ -83,6 +83,7 @@ export const CampaignEdit = props => {
           onChange={x => setTheme(x.target.value)}
         />
         <TextInput source="lucky_string" label="Lucky String" />
+
         <Button
           color="primary"
           variant="contained"
@@ -101,6 +102,18 @@ export const CampaignEdit = props => {
         </a>
         <br />
         <TextInput source="background_image" />
+        <TextInput
+          multiline
+          source="winning_message"
+          label="Winning Message in Modal"
+          fullWidth="true"
+        />
+        <TextInput
+          multiline
+          source="losing_message"
+          label="Losing Message in Modal"
+          fullWidth="true"
+        />
       </SimpleForm>
     </Edit>
   );
@@ -174,6 +187,22 @@ export const CampaignCreate = props => {
           hidden
           source="html_body"
           defaultValue='&lt;div style="height: 60vh; padding: 3%; background-color: rgba(255, 255, 255, 0.5); border-radius: 25px;"&gt;&lt;h1&gt;Stand a chance to win a million dollars!&lt;/h1&gt;&lt;br /&gt;&lt;h2&gt;Step 1:&lt;/h2&gt;&lt;h4&gt;Buy a meal at one of our hundred over participating outlets!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 2:&lt;/h2&gt;&lt;h4&gt;Retrieve the pin from the scratch card!&lt;/h4&gt;&lt;br /&gt;&lt;h2&gt;Step 3:&lt;/h2&gt;&lt;h4&gt;Input your PIN number on the right.&lt;/h4&gt;&lt;/div&gt;'
+        />
+        <TextInput
+          hidden
+          multiline
+          source="winning_message"
+          label="Winning Message in Modal"
+          fullWidth="true"
+          defaultValue="Congratulations! Collect your winnings from the nearest outlet to you!"
+        />
+        <TextInput
+          hidden
+          multiline
+          source="losing_message"
+          label="Losing Message in Modal"
+          fullWidth="true"
+          defaultValue="Purchase another meal to get another chance!"
         />
         <TextInput
           source="background_image"
