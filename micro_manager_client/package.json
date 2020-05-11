@@ -23,7 +23,7 @@
     "react-scripts": "^3.3.1",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
-    "tinymce": "^5.2.0"
+    "tinymce": "^5.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
