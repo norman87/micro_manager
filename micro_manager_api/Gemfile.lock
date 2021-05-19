@@ -59,10 +59,14 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     nio4r (2.5.2)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.7-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.2)
     pg (1.2.2-x64-mingw32)
-    puma (3.12.2)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.1.2)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -111,12 +115,13 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   byebug
   chronic
   pg (>= 0.18, < 2.0)
-  puma (~> 3.7)
+  puma (~> 4.3)
   rack-cors
   rails (~> 5.1.7)
   tzinfo-data
